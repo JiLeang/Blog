@@ -8,21 +8,23 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>My Blog</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="http://demo.expertphp.in/css/dropzone.css" rel="stylesheet">
+    <script src="http://demo.expertphp.in/js/dropzone.js"></script>
 </head>
 <body>
+	@include('_includes.nav.main')
 
-    @include('_includes.nav.main')
-    <div id="app">
-       
+	@include('_includes.nav.manage')
+    <div class="management-area" id="app">
         @yield('content')
-    
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
